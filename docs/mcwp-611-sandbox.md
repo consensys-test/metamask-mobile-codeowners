@@ -18,3 +18,7 @@ Research POC for [codeowners-plus](https://github.com/multimediallc/codeowners-p
 - Dismiss stale approvals on push: **OFF**
 - Require review from Code Owners (native): **OFF**
 - Required status check: **Run Codeowners Plus**
+
+## Phase A test note
+
+Touch owned path for wiring validation.
