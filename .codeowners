@@ -1,17 +1,11 @@
-# MCWP-611 sandbox — real mobile paths (subset of .github/CODEOWNERS)
-# Phase A: individual owners (GITHUB_TOKEN). Phase B: swap to @consensys-test/* teams + PAT.
+# MCWP-611 Phase B — real mobile paths with consensys-test org teams
 
-# Phase A wiring paths (individual users)
-docs/mcwp-611-sandbox.md              @Qbandev
-docs/readme/ready-for-review.md       # unowned — no owners
+app/component-library/**              @consensys-test/sdlc-team-2
+app/core/Engine/Engine.ts             @consensys-test/sdlc-team-3
+.github/**                            @consensys-test/release-team
+app/util/parseAmount.ts               @consensys-test/sdlc-team-2 @consensys-test/release-team
+docs/readme/ready-for-review.md       # unowned
 
-# Real mobile paths (Phase B org teams — uncomment for decisive POC)
-# app/component-library/**              @consensys-test/sdlc-team-2
-# app/core/Engine/Engine.ts             @consensys-test/sdlc-team-3
-# .github/**                            @consensys-test/release-team
-# app/util/parseAmount.ts               @consensys-test/sdlc-team-2 @consensys-test/release-team
-
-# Self-ownership of trial config
-.codeowners                           @Qbandev
-codeowners.toml                       @Qbandev
-.github/workflows/codeowners-plus.yml @Qbandev
+.codeowners                           @consensys-test/release-team
+codeowners.toml                       @consensys-test/release-team
+.github/workflows/codeowners-plus.yml @consensys-test/release-team
