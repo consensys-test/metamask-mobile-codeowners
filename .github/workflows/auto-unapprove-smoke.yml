@@ -1,6 +1,7 @@
 name: Auto Unapprove Smoke (MCWP-611)
 
 # Sandbox smoke test for step-security/auto-unapprove on real mobile CODEOWNERS.
+# MCWP-611 two-team retest: release-team owned path in PR.
 # Default: dry-run on PR synchronize. Live dismissal via workflow_dispatch only.
 
 on:
