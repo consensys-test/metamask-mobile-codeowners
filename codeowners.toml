@@ -1,0 +1,10 @@
+# MCWP-611 sandbox — Phase A (smoke): individual users, GITHUB_TOKEN
+# Phase B (decisive): set fail_check=true, approval=false — see docs/mcwp-611-sandbox.md
+
+detailed_reviewers = true
+suppress_unowned_warning = true
+allow_self_approval = true
+
+[enforcement]
+fail_check = false
+approval = false

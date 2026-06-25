@@ -1,0 +1,43 @@
+name: Codeowners Plus
+
+# MCWP-611 sandbox — consensys-test/metamask-mobile-codeowners
+# Spec: https://github.com/multimediallc/codeowners-plus
+# Companion rerun workflow: codeowners-plus-rerun.yml
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - labeled
+      - unlabeled
+
+concurrency:
+  group: codeowners-plus-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  codeowners-plus:
+    name: Run Codeowners Plus
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          filter: tree:0
+
+      - name: Run Codeowners Plus
+        uses: multimediallc/codeowners-plus@44c6f1355e06e1e606161468b91a70ebab7ce730
+        with:
+          github-token: ${{ secrets.CODEOWNERS_PLUS_TOKEN || secrets.GITHUB_TOKEN }}
+          pr: ${{ github.event.pull_request.number }}
+          verbose: true
+          quiet: ${{ github.event.pull_request.draft }}
