@@ -1,10 +1,7 @@
 name: Codeowners Plus Rerun
 
 on:
-  pull_request_review:
-    types:
-      - submitted
-      - dismissed
+  workflow_dispatch:
 
 permissions: {}
 
