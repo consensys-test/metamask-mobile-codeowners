@@ -411,3 +411,4 @@ app/core/Engine/wallet-init/instance-options/storage-service* @MetaMask/mobile-p
 # ⚠️ Note: Leaving this rule unassigned disables Code Owner review enforcement for snapshot files.
 # ⚠️ Important: This rule must remain at the bottom of the CODEOWNERS file to take precedence over more specific path-based rules.
 **/*.snap
+# mcwp611 2-team test
