@@ -5,14 +5,13 @@ name: Codeowners Plus
 # Companion rerun workflow: codeowners-plus-rerun.yml
 
 on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - ready_for_review
-      - labeled
-      - unlabeled
+  # Disabled during MCWP-611 auto-unapprove smoke test (re-enable via workflow_dispatch)
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: PR number
+        required: true
+        type: number
 
 concurrency:
   group: codeowners-plus-${{ github.ref }}

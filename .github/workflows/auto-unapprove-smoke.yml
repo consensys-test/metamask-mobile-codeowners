@@ -1,0 +1,38 @@
+name: Auto Unapprove Smoke (MCWP-611)
+
+# Sandbox smoke test for step-security/auto-unapprove on real mobile CODEOWNERS.
+# Default: dry-run on PR synchronize. Live dismissal via workflow_dispatch only.
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:
+    inputs:
+      pr-number:
+        description: PR number to analyze
+        required: true
+        type: number
+      dry-run:
+        description: Dry run (log only, no dismissals)
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  auto-unapprove:
+    name: Auto Unapprove
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto unapprove reviews
+        uses: step-security/auto-unapprove@c87029c4f62d004fb8979a7a5cb90b3c1729df32
+        with:
+          github-token: ${{ secrets.AUTO_UNAPPROVE_TOKEN || secrets.GITHUB_TOKEN }}
+          pr-number: ${{ github.event.inputs.pr-number || github.event.number }}
+          dry-run: ${{ github.event_name == 'workflow_dispatch' && format('{0}', github.event.inputs.dry-run) || 'true' }}
+          code-owners-file: '.github/CODEOWNERS'
+          target-branch: ${{ github.event.pull_request.base.ref || 'main' }}
+          team-start-with: '@'
