@@ -1,11 +1,1 @@
-# MCWP-611 Phase B — real mobile paths with consensys-test org teams
-
-app/component-library/**              @consensys-test/sdlc-team-2
-app/core/Engine/Engine.ts             @consensys-test/sdlc-team-3
-.github/**                            @consensys-test/release-team
-app/util/parseAmount.ts               @consensys-test/sdlc-team-2 @consensys-test/release-team
-docs/readme/ready-for-review.md       # unowned
-
-.codeowners                           @consensys-test/release-team
-codeowners.toml                       @consensys-test/release-team
-.github/workflows/codeowners-plus.yml @consensys-test/release-team
+*** invalid .codeowners syntax
