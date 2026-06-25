@@ -35,4 +35,4 @@ jobs:
           dry-run: ${{ github.event_name == 'workflow_dispatch' && format('{0}', github.event.inputs.dry-run) || 'true' }}
           code-owners-file: '.github/CODEOWNERS'
           target-branch: ${{ github.event.pull_request.base.ref || 'main' }}
-          team-start-with: '@'
+          team-start-with: '@consensys-test/'
